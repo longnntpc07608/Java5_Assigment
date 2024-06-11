@@ -13,7 +13,7 @@
 					<div class="panel-heading">${ hp.name }</div>
 					<div class="panel-body">
 						<a href="#"> <img
-							src="${hp.image }"
+							src="/image/${hp.image }"
 							class="img-responsive" style="width: 100%" alt="Image">
 						</a>
 					</div>
@@ -49,7 +49,7 @@
 					<div class="panel-heading">${ np.name }</div>
 					<div class="panel-body">
 						<a href="#"> <img
-							src="${np.image }"
+							src="/image/${np.image }"
 							class="img-responsive" style="width: 100%" alt="Image">
 						</a>
 					</div>
@@ -84,7 +84,7 @@
 					<div class="panel-heading">${ sp.name }</div>
 					<div class="panel-body">
 						<a href="#"> <img
-							src="${sp.image }"
+							src="/image/${sp.image }"
 							class="img-responsive" style="width: 100%" alt="Image">
 						</a>
 					</div>

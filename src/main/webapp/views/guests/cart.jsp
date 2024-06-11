@@ -27,7 +27,7 @@
 							<input type="hidden" name="id" value="${item.productId}">
 							<tr>							
 								<td><b>${ item.productName }</b> <br>
-								<br> <img alt="" src="${hp.image }" width="70%"></td>
+								<br> <img alt="" src="/image/${hp.image }" width="70%"></td>
 								<td>${ item.price } VNĐ</td>
 								<td>
 									<form action="/cart/update/${item.productId}" method="post">

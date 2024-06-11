@@ -28,8 +28,7 @@
 						<div class="panel-heading">${ p.name }</div>
 						<div class="panel-body">
 							<a href="#">
-							 <img src="${ p.image }"
-								class="img-responsive" style="width: 100%" alt="Image"/>
+							 <img src="/image/${ p.image }" class="img-responsive" style="width: 100%" alt="Image"/>
 							</a>
 						</div>
 						<div class="panel-footer">
