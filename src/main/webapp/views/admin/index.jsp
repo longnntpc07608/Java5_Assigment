@@ -1,100 +1,103 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>${ TitlePage }</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {
-	height: 1111px;
-}
-
-/* Set gray background color and 100% height */
-.sidenav {
-	background-color: #f1f1f1;
-	height: 100%;
-}
-
-/* Set black background color, white text and some padding */
-footer {
-	background-color: #555;
-	color: white;
-	padding: 35px;
-}
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
-		height: auto;
-	}
-}
-</style>
+    <meta charset="UTF-8">
+    <title>${ TitlePage }</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous" />
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="d-flex flex-column justify-content-between h-100">
+                    <div>
+                        <br>
+                        <a href="/"><button class="btn btn-warning w-100 mb-3">
+                            <i class="bi bi-arrow-left"></i> Quay về Shop
+                        </button></a>
+                        <h2>Online Store</h2>
+                        <br>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin">
+                                    <i class="bi bi-speedometer2"></i> Thống Kê
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct">
+                                    <i class="bi bi-cart"></i> Sản Phẩm <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="collapseProduct">
+                                    <ul class="nav flex-column ms-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/product">
+                                                <i class="bi bi-arrow-right"></i> Quản Lý Sản Phẩm
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/category">
+                                                <i class="bi bi-arrow-right"></i> Quản Lý LSP
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/bill">
+                                    <i class="bi bi-receipt"></i> Hóa Đơn
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/users">
+                                    <i class="bi bi-person"></i> Người Dùng
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav flex-column mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <i class="bi bi-box-arrow-in-right"></i> Đăng Xuất
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <jsp:include page="${views}"></jsp:include>
+            </main>
+        </div>
+    </div>
 
-	<div class="container-fluid">
-		<div class="row content">
-			<div class="col-sm-2 sidenav hidden-xs">
-				<br> <a href="/"><button class="btn btn-warning"
-						style="width: 100%;">
-						<span class="glyphicon glyphicon-arrow-left"></span> Quay về Shop
-					</button></a>
-				<h2>Online Store</h2>
-				<br>
-				<ul class="nav nav-pills nav-stacked text-lg">
-					<li><a href="/admin"><span
-							class="glyphicon glyphicon-dashboard"></span> Thống Kê</a></li>
-					<li><a href="#" data-toggle="collapse"
-						data-target="#myNavbar1"><span
-							class="glyphicon glyphicon-shopping-cart"></span> Sản Phẩm <span
-							class="caret"></span></a>
-						<ul class="nav nav-pills nav-stacked collapse" id="myNavbar1">
-							<li class="text-center"><a href="/admin/product"><span
-									class="glyphicon glyphicon-hand-right"></span> Quản Lý Sản Phẩm</a></li>
-							<li class="text-center"><a href="/admin/category"><span
-									class="glyphicon glyphicon-hand-right"></span> Quản Lý LSP</a></li>
-						</ul></li>
-					<li><a href="/admin/bill"><span
-							class="glyphicon glyphicon-list-alt"></span> Hóa Đơn </a></li>
-					<li><a href="/admin/users"><span
-							class="glyphicon glyphicon-user"></span> Người Dùng</a></li>
-				</ul>
-				<ul class="nav nav-pills nav-stacked text-lg" style="padding-top: 20cm;">
-					<li><a href="/login"> <span
-								class="glyphicon glyphicon-log-in"></span> Đăng Xuất
-						</a></li>
-				</ul>
-			</div>
-			<br>
+    <footer class="container-fluid text-center">
+        <p>
+            Design By <b>Nguyễn Thành Nam © ASS_SOF3021</b>
+        </p>
+    </footer>
 
-			<div class="col-sm-10">
-				<jsp:include page="${ views }"></jsp:include>
-			</div>
-		</div>
-	</div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-	<footer class="container-fluid text-center">
-		<p>
-			Design By <b>Nguyễn Thành Nam © ASS_SOF3021</b>
-		</p>
-	</footer>
-
-
-
-
-
-
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 </body>
 </html>
