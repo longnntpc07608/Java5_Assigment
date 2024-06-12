@@ -20,13 +20,13 @@
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<!-- <style>
 .affix {
 	top: 0;
 	width: 100%;
@@ -55,22 +55,20 @@
 
 
 
-</style>
+</style> -->
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<!-- <img alt="" src="https://caodang.fpt.edu.vn/vinmart/images/2017-FPTPolytechic-01.jpg" width="1100px" height="200px"> -->
-			<div id="carouselExample" class="carousel slide">
+	
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="/image/tainghe02.jpg" style="width: 100%; height: 450px;" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/image/tainghe02.jpg" class="d-block w-100" alt="...">
+      <img src="/image/tainghe02.jpg" style="width: 100%; height: 450px;" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/image/tainghe02.jpg" class="d-block w-100" alt="...">
+      <img src="/image/tainghe02.jpg" style="width: 100%; height: 450px;" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -84,7 +82,7 @@
 </div>
 		</div>
 	</div>
-<div class="container">
+<div class="container" style="margin-bottom: 50px;">
 	
 
 	<nav class="navbar navbar-expand-lg navbar-white bg-white" data-bs-spy="affix" data-bs-offset-top="197">
@@ -124,6 +122,7 @@
             <a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a>
           </li>
         </c:if>
+        
         <c:if test="${ User != null }">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -149,7 +148,6 @@
     </div>
   </div>
 </nav>
-	
 	
 	
 	</div>
