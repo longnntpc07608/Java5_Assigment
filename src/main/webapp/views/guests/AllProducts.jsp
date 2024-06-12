@@ -32,20 +32,19 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 			<c:forEach var="p" items="${ products }">
 				<div class="col-sm-3">
 					<div class="card text-center">
-						<div class="card-header" style="background-color: white;">${ p.name }</div>
+						<div class="card-header" style="background-color: white; height: 55px;">${ p.name }</div>
 						<div class="card-body">
 							<a href="#">
-							 <img src="/image/${ p.image }" class="img-responsive" style="width: 100%" alt="Image"/>
+							 <img src="/image/${ p.image }" class="img-responsive" style="width: 100%; height: 190px;" alt=""/>
 							</a>
 						</div>
 						<div class="card-footer">
-							<h4 class="text-info">
+							<h4 class="">
 								<b> ${ p.price.toString().replace(".0", " VNĐ") }</b>
 							</h4>
 							<a href="/cart/add/${p.id}">
-							<button class="btn btn-primary">Thêm Vào Giỏ Hàng</button>
+							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 							</a>
-							
 						</div>
 					</div>
 				</div>

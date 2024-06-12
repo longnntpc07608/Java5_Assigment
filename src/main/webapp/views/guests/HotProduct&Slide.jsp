@@ -16,11 +16,11 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 		<c:forEach var="hp" items="${ hotProducts }" end="3">
 			<div class="col-sm-3">
 				<div class="card text-center">
-					<div class="card-header">${ hp.name }</div>
+					<div class="card-header" style="height: 55px;">${ hp.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
 							src="/image/${hp.image }"
-							class="img-responsive" style="width: 100%" alt="Image">
+							class="img-responsive" style="width: 100%; height: 190px;" alt="Image">
 						</a>
 					</div>
 					<div class="card-footer">
@@ -28,7 +28,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 							<b> ${ hp.price.toString().replace(".0", " VNĐ") }</b>
 						</h4>
 						<a href="/cart/add/${hp.id}">
-							<button class="btn btn-danger">Thêm Vào Giỏ Hàng</button>
+							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 						</a>
 					</div>
 				</div>
@@ -39,7 +39,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 	<br>
 	<a href="/shop">
-		<button type="button" class="btn btn-primary"
+		<button type="button" class="btn btn-outline-primary"
 			style="align-content: center;">Xem Thêm</button>
 	</a>
 	<br>
@@ -54,11 +54,11 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 		<c:forEach var="np" items="${ newProducts }" end="3">
 			<div class="col-sm-3">
 				<div class="card text-center">
-					<div class="card-header">${ np.name }</div>
+					<div class="card-header" style="height: 55px;">${ np.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
 							src="/image/${np.image }"
-							class="img-responsive" style="width: 100%" alt="Image">
+							class="img-responsive" style="width: 100%; height: 190px;" alt="Image">
 						</a>
 					</div>
 					<div class="card-footer">
@@ -66,7 +66,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 							<b> ${ np.price.toString().replace(".0", " VNĐ") }</b>
 						</h4>
 						<a href="/cart/add/${np.id}">
-							<button class="btn btn-danger">Thêm Vào Giỏ Hàng</button>
+							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 						</a>
 					</div>
 				</div>
@@ -76,7 +76,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 	<br>
 	<a href="/shop">
-		<button type="button" class="btn btn-primary"
+		<button type="button" class="btn btn-outline-primary"
 			style="align-content: center;">Xem Thêm</button>
 	</a>
 	<br>
@@ -90,11 +90,11 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 		<c:forEach var="sp" items="${ saleProducts }" end="7">
 			<div class="col-sm-3">
 				<div class="card text-center">
-					<div class="card-header">${ sp.name }</div>
+					<div class="card-header" style="height: 55px;">${ sp.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
 							src="/image/${sp.image }"
-							class="img-responsive" style="width: 100%" alt="Image">
+							class="img-responsive" style="width: 100%; height: 190px;" alt="">
 						</a>
 					</div>
 					<div class="card-footer">
@@ -105,7 +105,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 							<b>${ sp.price.toString().replace(".0", " VNĐ") }</b>
 						</h4>
 						<a href="/cart/add/${sp.id}">
-							<button class="btn btn-danger">Thêm Vào Giỏ Hàng</button>
+							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 						</a>
 					</div>
 				</div>
@@ -115,7 +115,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 	<br>
 	<a href="/shop">
-		<button type="button" class="btn btn-primary"
+		<button type="button" class="btn btn-outline-primary"
 			style="align-content: center;">Xem Thêm</button>
 	</a>
 	<br>
