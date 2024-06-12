@@ -15,7 +15,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<div class="row">
 		<c:forEach var="hp" items="${ hotProducts }" end="3">
 			<div class="col-sm-3">
-				<div class="card text-center">
+				<div class="card text-center m-2">
 					<div class="card-header" style="height: 55px;">${ hp.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
@@ -53,7 +53,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<div class="row">
 		<c:forEach var="np" items="${ newProducts }" end="3">
 			<div class="col-sm-3">
-				<div class="card text-center">
+				<div class="card text-center m-2">
 					<div class="card-header" style="height: 55px;">${ np.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
@@ -89,7 +89,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<div class="row">
 		<c:forEach var="sp" items="${ saleProducts }" end="7">
 			<div class="col-sm-3">
-				<div class="card text-center">
+				<div class="card text-center m-2">
 					<div class="card-header" style="height: 55px;">${ sp.name }</div>
 					<div class="card-body">
 						<a href="#"> <img
