@@ -2,132 +2,135 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<h1>
-	<small>Users Page</small>
-</h1>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Users Page</title>
+</head>
+<body>
+	<h1>
+		<small>Users Page</small>
+	</h1>
+	<hr>
 
-<div class="panel-group" id="accordion">
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>Username</th>
-							<th>Password</th>
-							<th>Fullname</th>
-							<th>Email</th>
-							<th>Photo</th>
-							<th>Activated</th>
-							<th>Role</th>
-							<th colspan="2">Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="item" items="${page.getContent()}">
-							<tr>
-								<td>${ item.username }</td>
-								<td>${ item.password }</td>
-								<td>${ item.fullname }</td>
-								<td>${ item.email }</td>
-								<td><img alt="photo" src="${ item.photo }" width="100" height="200"></td>
-								<td>${ item.activated == true ? 'Activated' : 'Not Activated' }</td>
-								<td>${ item.role == true ? 'ADMIN' : 'USER' }</td>
-								<td><a href="/admin/users/edit/${item.username}"><button
-											class="btn btn-warning open-formEdit"><span class="glyphicon glyphicon-pencil"></span></button></a></td>								
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-				<ul class="pager">
-					<li><a href="/admin/users?p=0"><span
-							class="glyphicon glyphicon-fast-backward"></span></a></li>
-					<li><a
-						href="/admin/users?p=${page.number == 0 ?  0 : page.number-1}"><span
-							class="glyphicon glyphicon-backward"></span></a></li>
-					<li><span class="badge"><b class="text-default">${page.number+1}</b>
-					</span></li>
-					<li><a
-						href="/admin/users?p=${page.number == page.totalPages-1 ? page.totalPages-1 : page.number+1}"><span
-							class="glyphicon glyphicon-forward"></span></a></li>
-					<li><a href="/admin/users?p=${page.totalPages-1}"><span
-							class="glyphicon glyphicon-fast-forward"></span></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="panel-body">
-			<div class="container">
-				<form:form class="form-horizontal" action="/admin/users"
-					modelAttribute="user">
-					<div class="row">
-						<div class="col-xs-2">
-							<img src="/image/3.jpeg" class="img-thumbnail"
-								alt="image" name="photo" width="300" height="400">							
+	<div class="accordion" id="accordion">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingOne">
+				<button class="accordion-button" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseOne"
+					aria-expanded="true" aria-controls="collapseOne">User
+					Details</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse show"
+				aria-labelledby="headingOne" data-bs-parent="#accordion">
+				<div class="accordion-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Username</th>
+									<th>Fullname</th>
+									<th>Email</th>
+									<th>Activated</th>
+									<th>Role</th>
+									<th colspan="2">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="item" items="${page.getContent()}">
+									<tr>
+										<td>${ item.username }</td>
+										<td>${ item.fullname }</td>
+										<td>${ item.email }</td>
+										<td>${ item.activated ? 'Activated' : 'Not Activated' }</td>
+										<td>${ item.role ? 'ADMIN' : 'USER' }</td>
+										<td><a href="/admin/users/edit/${item.username}"><button
+													class="btn btn-warning">
+													<i class="bi bi-pencil"></i>
+												</button></a></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+						<nav>
+							<ul class="pagination justify-content-center">
+								<li class="page-item"><a class="page-link"
+									href="/admin/users?p=0" aria-label="First"> <i
+										class="bi bi-skip-backward-fill"></i>
+								</a></li>
+								<li class="page-item"><a class="page-link"
+									href="/admin/users?p=${page.number == 0 ?  0 : page.number-1}"
+									aria-label="Previous"> <i class="bi bi-caret-left-fill"></i>
+								</a></li>
+								<li class="page-item"><span
+									class="page-link bg-light text-dark">${page.number+1} /
+										${page.totalPages}</span></li>
+								<li class="page-item"><a class="page-link"
+									href="/admin/users?p=${page.number == page.totalPages-1 ? page.totalPages-1 : page.number+1}"
+									aria-label="Next"> <i class="bi bi-caret-right-fill"></i>
+								</a></li>
+								<li class="page-item"><a class="page-link"
+									href="/admin/users?p=${page.totalPages-1}" aria-label="Last">
+										<i class="bi bi-skip-forward-fill"></i>
+								</a></li>
+							</ul>
+
+						</nav>
+					</div>
+				</div>
+				<div class="accordion-body">
+					<form:form class="row g-3" action="/admin/users"
+						modelAttribute="user">
+						<div class="input-group col-md-8 mb-3">
+							<span class="input-group-text" style="width: 3cm;"><b>Username
+									*</b></span>
+							<form:input type="text" class="form-control" path="username"
+								placeholder="Username" readonly="true" />
 						</div>
-						<div class="col-xs-10">
-							<div class="form-group">
-								<label for="username">Username *</label>
-								<form:input class="form-control form-control-large"
-									id="username" path="username" placeholder="Enter Username" readonly="true"/>
-							</div>
+						<div class="input-group col-md-8 mb-3">
+							<span class="input-group-text" style="width: 3cm;"><b>Password
+									*</b></span>
+							<form:input type="password" class="form-control" id="pwd"
+								path="password" placeholder="******" readonly="true" />
 						</div>
-						<div class="col-xs-10">
-							<div class="form-group">
-								<label for="pwd">Password *</label>
-								<form:input class="form-control form-control-small" id="pwd" type="password"
-									path="password" placeholder="******" readonly="true"/>
-							</div>
+						<div class="input-group col-md-8 mb-3">
+							<span class="input-group-text" style="width: 3cm;"><b>Fullname
+									*</b></span>
+							<form:input type="text" class="form-control" id="fullname"
+								path="fullname" placeholder="Enter Fullname" readonly="true" />
 						</div>
-						<div class="col-xs-10">
-							<div class="form-group">
-								<label for="fullname">Fullname *</label>
-								<form:input class="form-control" id="fullname" path="fullname"
-									placeholder="Enter Fullname" readonly="true"/>
-							</div>
+						<div class="input-group col-md-8 mb-3">
+							<span class="input-group-text" style="width: 3cm;"><b>Email
+									*</b></span>
+							<form:input type="text" class="form-control" id="email"
+								path="email" placeholder="Enter email" readonly="true" />
 						</div>
-						<div class="col-xs-2"></div>
-						<div class="col-xs-10">
-							<div class="form-group">
-								<label for="email">Email *</label>
-								<form:input class="form-control form-control-small" id="email"
-									path="email" placeholder="Enter email" readonly="true"/>
-							</div>
-						</div>
-						<div class="col-xs-2"></div>
-						<div class="col-xs-5">
+						<div class="col-md-4 mb-3">
 							<div class="form-group">
 								<label for="activated">Activated</label> <br>
-								<form:radiobuttons id="activated" path="activated" items="${ activated }"
-									delimiter=" -_- " />
+								<form:radiobuttons id="activated" path="activated"
+									items="${activated}" delimiter=" -_- " class="form-check-input" />
 							</div>
 						</div>
-						<div class="col-xs-1"></div>
-						<div class="col-xs-5">
+						<div class="col-md-4 mb-3">
 							<div class="form-group">
 								<label for="role">Role</label> <br>
-								<form:radiobuttons path="role" items="${ roles }"
-									delimiter=" -_- " />
+								<form:radiobuttons path="role" items="${roles}"
+									delimiter=" -_- " class="form-check-input" />
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button class="btn btn-primary"
-									formaction="/admin/users/save">
-									<span class="glyphicon glyphicon-floppy-save">Save</span>
+							<div class="col-sm-offset-2 col-sm-12">
+								<button class="btn btn-primary" formaction="/admin/users/save">
+									<i class="bi bi-save"></i> Save
 								</button>
-								<!-- 
-								<button class="btn btn-success"
-									formaction="/admin/users/clear">
-									<span class="glyphicon glyphicon-refresh">Clear</span>
-								</button> -->
 							</div>
 						</div>
-					</div>
-					<br>
-					<br>
-				</form:form>
+					</form:form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</body>
+</html>
