@@ -137,16 +137,16 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-spy="affix" data-bs-offset-top="197">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">FShop</a>
+    <a class="navbar-brand" href="/">HEADPHONE STORE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Trang Chủ</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/1">Áo</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/3">Quần</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/2">Giày</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/1">Có dây</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/3">Không dây</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/2">Chụp tai</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Loại Sản Phẩm </a>
           <ul class="dropdown-menu">
