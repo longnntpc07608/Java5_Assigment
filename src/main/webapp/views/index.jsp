@@ -141,7 +141,6 @@
 			</div>
 		</nav>
 
-
 	</div>
 	<jsp:include page="${ view }"></jsp:include>
 
