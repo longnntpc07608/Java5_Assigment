@@ -70,16 +70,20 @@ public class ProductsDetails {
         return "/admin/index";
     }
 
-    @RequestMapping("/product/edit/{id}")
-    public String edit(Model model, @PathVariable("id") Integer id, @ModelAttribute("prod") Product product) {
-        Optional<Product> opt = daoProd.findById(id);
-        if(opt.isPresent()) {
-            model.addAttribute("prod", opt.get());
+    @GetMapping("/product/edit/{id}")
+    public String editProductForm(@PathVariable("id") Integer id, Model model) {
+        Optional<Product> optionalProduct = daoProd.findById(id);
+        if (optionalProduct.isPresent()) {
+            model.addAttribute("prod", optionalProduct.get());
+            model.addAttribute("categories", getCategories()); // Ensure categories are available for dropdown
+            model.addAttribute("availables", getAvailable()); // Ensure availability options are available
+            return "/admin/ProductsDetails"; // This is the edit product form view
         } else {
-            model.addAttribute("prod", new Product());
+            // Handle case where product with given ID is not found
+            return "redirect:/admin/product"; // Redirect to product listing page
         }
-        return "forward:/admin/product";
     }
+
 
     @RequestMapping("/product/delete/{id}")
     public String delete(Model model, @PathVariable("id") Integer id) {
