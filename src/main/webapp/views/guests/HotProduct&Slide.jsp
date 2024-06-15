@@ -9,7 +9,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 <meta charset="UTF-8">
 <title></title>
 
-<div class="container" align="center">
+<div class="container" align="center" style="margin-top: 25px;">
 	<h2 class="homepage" style="color: red;">Sản phẩm hot</h2>
 	<br>
 	<div class="row">
@@ -40,7 +40,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<br>
 	<a href="/shop">
 		<button type="button" class="btn btn-outline-primary"
-			style="align-content: center;">Xem Thêm</button>
+			style="align-content: center;">Xem tất cả </button>
 	</a>
 	<br>
 	<br>
@@ -77,7 +77,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<br>
 	<a href="/shop">
 		<button type="button" class="btn btn-outline-primary"
-			style="align-content: center;">Xem Thêm</button>
+			style="align-content: center;">Xem tất cả</button>
 	</a>
 	<br>
 	<br>
@@ -116,7 +116,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 	<br>
 	<a href="/shop">
 		<button type="button" class="btn btn-outline-primary"
-			style="align-content: center;">Xem Thêm</button>
+			style="align-content: center;">Xem tất cả</button>
 	</a>
 	<br>
 </div>
