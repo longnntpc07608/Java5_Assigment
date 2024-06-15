@@ -1,5 +1,11 @@
 package demo.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +19,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
@@ -23,6 +30,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import demo.dao.CategoryDAO;
 import demo.dao.ProductDAO;
@@ -77,6 +85,7 @@ public class ProductsDetails {
             model.addAttribute("prod", optionalProduct.get());
             model.addAttribute("categories", getCategories()); // Ensure categories are available for dropdown
             model.addAttribute("availables", getAvailable()); // Ensure availability options are available
+            
             return "/admin/ProductsDetails"; // This is the edit product form view
         } else {
             // Handle case where product with given ID is not found
@@ -96,7 +105,8 @@ public class ProductsDetails {
     public String saveProduct(
             @Validated @ModelAttribute("prod") Product product,
             BindingResult result,
-            Model model
+            Model model,
+            @RequestParam(value = "imageFile", required = false) MultipartFile imageFile
     ) {
         if (result.hasErrors()) {
             List<ObjectError> errors = result.getAllErrors();
@@ -107,10 +117,45 @@ public class ProductsDetails {
             return "/admin/index";
         }
 
+        // Xử lý lưu trữ hình ảnh nếu người dùng đã chọn file mới
+        if (imageFile != null && !imageFile.isEmpty()) {
+            String fileName = StringUtils.cleanPath(imageFile.getOriginalFilename());
+            product.setImage(fileName); // Cập nhật đường dẫn hình ảnh mới vào đối tượng sản phẩm
+            
+            try {
+                // Lưu file ảnh vào thư mục trên server
+                String uploadDir = "C:\\Users\\Asus\\WebJava5\\Project\\Java5_Assigment\\src\\main\\webapp\\image";
+                Path uploadPath = Paths.get(uploadDir);
+                
+                if (!Files.exists(uploadPath)) {
+                    Files.createDirectories(uploadPath);
+                }
+                
+                try (InputStream inputStream = imageFile.getInputStream()) {
+                    Path filePath = uploadPath.resolve(fileName);
+                    Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Xử lý lỗi khi sao chép file
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Xử lý lỗi khi tạo thư mục lưu trữ
+            }
+        } else {
+            // Nếu người dùng không chọn file mới, giữ nguyên đường dẫn hình ảnh cũ
+            Product existingProduct = daoProd.findById(product.getId()).orElse(null);
+            if (existingProduct != null) {
+                product.setImage(existingProduct.getImage());
+            }
+        }
+
         daoProd.save(product);
         return "redirect:/admin/product";
     }
 
+
+    
     @RequestMapping("/product/clear")
     public String clear(Model model, @ModelAttribute("prod") Product product) {
         product = new Product();
