@@ -22,7 +22,7 @@ public class MailModel {
 	String[] attachments;
 
 	public MailModel(String to, String subject, String body) {
-		this.from = "ASS_SOF3021_NamNT_PH11607 <namntph11607@fpt.edu.vn>";
+		this.from = "HEADPHONE STORE <tuoctcpc07630@fpt.edu.vn>";
 		this.to = to;
 		this.subject = subject;
 		this.body = body;

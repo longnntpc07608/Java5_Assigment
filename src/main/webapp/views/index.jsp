@@ -137,16 +137,16 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-spy="affix" data-bs-offset-top="197">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">FShop</a>
+    <a class="navbar-brand" href="/">HEADPHONE STORE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Trang Chủ</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/1">Áo</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/3">Quần</a></li>
-        <li class="nav-item"><a class="nav-link" href="/shop/2">Giày</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/1">Có dây</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/3">Chụp tai</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop/2">Không dây</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Loại Sản Phẩm </a>
           <ul class="dropdown-menu">
@@ -161,6 +161,10 @@
           <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
         </c:if>
         <c:if test="${ User != null }">
+       <li class="nav-item">
+        <img alt="" src="/image/${User.photo}" style="width: 20px; height: 20px">
+        <span class="navbar-text p-3" id="usernameText">Hello, ${User.username }</span>
+       </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span class="glyphicon glyphicon-user"></span> Tài Khoản
@@ -171,6 +175,7 @@
               </c:if>
               <li><a class="dropdown-item" href="/myAcc/historyOrder/${ User.getUsername() }">Lịch Sử Order</a></li>
               <li><a class="dropdown-item" href="/myAcc/myProfile/${ User.getUsername() }">Quản Lý Tài Khoản</a></li>
+              <li><a class="dropdown-item" href="/ResetPassword">Đổi mật khẩu</a></li>
               <li><a class="dropdown-item" href="/login">Đăng Xuất</a></li>
             </ul>
           </li>

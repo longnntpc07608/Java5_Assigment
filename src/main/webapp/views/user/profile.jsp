@@ -13,7 +13,7 @@
 					<div class="row">
 						<div class="col-md-3 col-lg-3 " align="center">
 							<img alt="User Pic"
-								src="/image/1.jpeg"
+								src="/image/${User.photo }"
 								class="img-circle img-responsive">
 						</div>
 

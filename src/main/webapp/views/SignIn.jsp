@@ -1,35 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div>
-	<h1 class="logo-badge text-whitesmoke">
-		<span class="fa fa-user-circle"></span>
-	</h1>
-</div>
-<h3 class="text-whitesmoke"><a href="/">FPT Fashion</a></h3>
-<h4 class="text-primary">Sign In</h4>
-<div class="container-content">
-	<p class="text-danger">${ errorMessage }</p>
-	<form class="margin-t" action="/login" method="post">
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Username"
-				name="username">
-		</div>
-		<div class="form-group">
-			<input type="password" class="form-control" placeholder="*****"
-				name="password">
-		</div>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+     <div class="container mt-5" style="width: 100% ">
+        <div class="card" >
+            <div class="card-header  text-center">
+        <h3 class="text-primary text-center">Đăng nhập</h3>
+            </div>
+            <div class="card-body">
+                <c:if test="${not empty errorMessage}">
+                    <div class="alert text-danger" role="alert">${ errorMessage }</div>
+                </c:if>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="tendangnhap">Tên đăng nhập</label>
+                        <input class="form-control" type="text" name="username" required>
+                        <br>
+                        <label for="matkhau">Mật khẩu</label>
+                        <input class="form-control" type="password" name="password" required>
+                        <br>
+                        <span>Bạn chưa có tài khoản?</span> <a href="/SignUp">Đăng ký</a> <br>
+                        <a href="/ForgotPassword">Quên mật khẩu?</a> <br>
+                        <button class="btn btn-primary" style="margin-left: 60%;">Đăng nhập</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-		<button type="submit" class="form-button button-l margin-b btn-primary">Sign
-			In</button>
-	</form>
-	<a class="text" data-toggle="modal"
-		data-target="#modalForgot" style="cursor: pointer;"><small>Forgot
-			your password?</small></a>
-	<p class="text text-center">
-		<small>Do not have an account?</small>
-	</p>
-	<a class="text-success" href="/SignUp"><small>Sign
-			Up</small></a>
-
-	
-</div>
+    <!-- Modal Forgot -->
+    
+        
