@@ -25,8 +25,8 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 						</a>
 					</div>
 					<div class="card-footer">
-						<h4 class="text-dark">
-							<b> ${ hp.price.toString().replace(".0", " VNĐ") }</b>
+						<h4 class="">
+							<b><fmt:formatNumber value="${ hp.price }"></fmt:formatNumber> VNĐ</b>
 						</h4>
 						<a href="/cart/add/${hp.id}">
 							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
@@ -36,7 +36,6 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 			</div>
 		</c:forEach>
 	</div>
-
 
 	<br>
 	<a href="/shop">
@@ -61,8 +60,8 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 						</a>
 					</div>
 					<div class="card-footer">
-						<h4 class="text-dark">
-							<b> ${ np.price.toString().replace(".0", " VNĐ") }</b>
+						<h4 class="">
+							<b><fmt:formatNumber value="${ np.price }"></fmt:formatNumber> VNĐ</b>
 						</h4>
 						<a href="/cart/add/${np.id}">
 							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
@@ -100,8 +99,8 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 						<mark>
 							<del>${ sp.price / 0.5 } VNĐ</del>
 						</mark>
-						<h4 class="text-dark">
-							<b>${ sp.price.toString().replace(".0", " VNĐ") }</b>
+						<h4 class="">
+							<b><fmt:formatNumber value="${ sp.price }"></fmt:formatNumber> VNĐ</b>
 						</h4>
 						<a href="/cart/add/${sp.id}">
 							<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>

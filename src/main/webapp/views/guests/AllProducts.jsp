@@ -33,8 +33,9 @@
 						</div>
 						<div class="card-footer">
 							<h4 class="">
-								<b> ${ p.price.toString().replace("", " VNĐ") }</b>
+								<b><fmt:formatNumber value="${ p.price }"></fmt:formatNumber> VNĐ</b>
 							</h4>
+							
 							<a href="/cart/add/${p.id}">
 								<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 							</a>
