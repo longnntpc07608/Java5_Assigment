@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 
-<div class="container">
+<div class="container" style="margin-top: 25px;">
 	<h3><a href="/myAcc/historyOrder/${ username }"><span class="glyphicon glyphicon-arrow-left"></span></a></h3>
 	
 	<br>
@@ -21,7 +21,7 @@
 				<c:forEach var="item" items="${ listOD }">
 					<tr>
 						<td><b>${ item.product.name }</b> <br> <br></td>
-						<td><img alt="" src="/image/1.jpeg" width="100%"></td>
+						<td><img alt="" src="/image/${ item.image }" width="100%"></td>
 						<td>${ item.price }VNĐ</td>
 						<td><b>${ item.quantity }</b></td>
 						<td>${ item.price * item.quantity }VNĐ</td>
@@ -43,7 +43,7 @@
 						Đã Giao Hàng
 					</c:if>
 				</b>
-			</small> <small style="padding-left: 3cm; color: fuchsia;"> <span
+			</small> <small style="padding-left: 3cm; color: fuchsia;"><span
 				class="glyphicon glyphicon-usd"></span> <b>Tổng Tiền: ${ TongTien }
 					VNĐ</b>
 			</small>

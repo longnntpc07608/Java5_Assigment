@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,14 +40,12 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 	<br>
 	<a href="/shop">
-		<button type="button" class="btn btn-outline-primary"
-			style="align-content: center;">Xem tất cả </button>
+		<button type="button" class="btn btn-outline-primary" style="align-content: center;">Xem tất cả </button>
 	</a>
 	<br>
 	<br>
 </div>
 <br>
-
 <div class="container" align="center">
 	<h3>Sản Phẩm Mới</h3>
 	<br>

@@ -10,18 +10,16 @@
             crossorigin="anonymous"
         />
         
-<div class="container">
+<div class="container" style="margin-top: 25px;">
 	<h2 class="breadcrumb text-center">
-		<small> <mark>
-				<b>Shopping Cart</b>
-			</mark> <span class="glyphicon glyphicon-menu-right"></span> <a
-			href="/cart/checkout">Checkout Details</a>
+		<small> 
+			<mark><b>Shopping Cart</b></mark><a href="/cart/checkout">Checkout Details</a>
 		</small>
 	</h2>
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="table-responsive">
-				<table class="table text-center">
+				<table class="table table-striped">
 					<thead class="row">
 						<tr>
 							<th class="col-sm-5 text-center">Sản Phẩm</th>
@@ -36,7 +34,7 @@
 							<input type="hidden" name="id" value="${item.productId}">
 							<tr>							
 								<td><b>${ item.productName }</b> <br>
-								<br> <img alt="" src="/image/${hp.image }" width="70%"></td>
+								<br> <img alt=""  width="50%"></td>
 								<td>${ item.price } VNĐ</td>
 								<td>
 									<form action="/cart/update/${item.productId}" method="post">
@@ -61,10 +59,10 @@
 				</c:if>
 				<a href="/">
 					<button class="btn btn-success">
-						<span class="glyphicon glyphicon-menu-left"></span> <b>Thêm
-							Sản Phẩm Khác</b>
+						<b>Thêm Sản Phẩm Khác</b>
 					</button>
-				</a> <a href="/cart/clear"><button class="btn btn-warning" >
+				</a> 
+				<a href="/cart/clear"><button class="btn btn-danger" >
 						<b>Làm mới giỏ hàng</b>
 					</button></a>
 			</div>
@@ -74,7 +72,7 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Cộng Giỏ Hàng</th>
+							<th></th>
 							<th></th>
 						</tr>
 					</thead>
@@ -98,7 +96,7 @@
 						</tr>
 					</tfoot>
 				</table>
-				<hr>
+				
 				<a href="/cart/checkout" >
 					<button class="btn btn-primary" style="width: 100%;">
 						<b>Tiến Hành Đặt Hàng</b>

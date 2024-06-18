@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <title></title>
 
 <link
@@ -11,19 +12,6 @@
 	
 <div class="container" style="margin-top: 25px;">
 	<div class="row content">
-		<%-- <div class="col-sm-2">
-			<h1>
-				<small>Loại Sản Phẩm</small>
-			</h1>
-			<ul class="nav nav-pills nav-stacked" data-spy="affixx"
-				data-offset-top="333">
-				<c:forEach var="cate" items="${ categories }">
-					<li><a href="/shop/${ cate.id }">${ cate.name }</a></li>
-				</c:forEach>
-			</ul>
-		</div> --%>
-
-
 		<br>
 		<div class="row">
 			<h4 class="text-primary">${ category }</h4>
@@ -45,11 +33,10 @@
 						</div>
 						<div class="card-footer">
 							<h4 class="">
-								<b> ${ p.price.toString().replace(".0", " VNĐ") }</b>
+								<b> ${ p.price.toString().replace("", " VNĐ") }</b>
 							</h4>
 							<a href="/cart/add/${p.id}">
-								<button class="btn btn-outline-danger">Thêm Vào Giỏ
-									Hàng</button>
+								<button class="btn btn-outline-danger">Thêm Vào Giỏ Hàng</button>
 							</a>
 						</div>
 					</div>
